@@ -1,15 +1,13 @@
 import { Router, Route, Switch } from 'wouter'
 import { useQuery } from '@tanstack/react-query'
-import Landing from './pages/Landing'
-import Dashboard from './pages/Dashboard'
-import SignIn from './pages/SignIn'
-
+import Landing from './pages/Landing.jsx'
+import Dashboard from './pages/Dashboard.jsx'
+import SignIn from './pages/SignIn.jsx'
 function App() {
   const { data: user, isLoading } = useQuery({
     queryKey: ['/api/auth/user'],
     retry: false,
   })
-
   if (isLoading) {
     return (
       <div className="min-h-screen bg-slate-900 flex items-center justify-center">
@@ -20,7 +18,6 @@ function App() {
       </div>
     )
   }
-
   return (
     <Router>
       <Switch>
@@ -47,5 +44,4 @@ function App() {
     </Router>
   )
 }
-
 export default App
