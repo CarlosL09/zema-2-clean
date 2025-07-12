@@ -1,7 +1,6 @@
 import { defineConfig } from 'vite'
 import react from '@vitejs/plugin-react'
 import { resolve } from 'path'
-
 export default defineConfig({
   plugins: [react()],
   root: 'client',
@@ -13,5 +12,6 @@ export default defineConfig({
     alias: {
       '@': resolve(__dirname, 'client/src'),
     },
+    extensions: ['.ts', '.tsx', '.js', '.jsx'],
   },
 })
