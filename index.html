@@ -1,136 +1,266 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>ZEMA - Zero Effort Mail Automation</title>
-  <meta name="description" content="ZEMA - Zero Effort Mail Automation. Streamline your email workflow with AI-powered automation.">
-  <style>
-    * { margin: 0; padding: 0; box-sizing: border-box; }
-    body { 
-      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', sans-serif;
-      background: linear-gradient(135deg, #0f172a 0%, #1e293b 100%);
-      color: white;
-      min-height: 100vh;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-    }
-    .container {
-      text-align: center;
-      max-width: 800px;
-      padding: 2rem;
-    }
-    .logo {
-      width: 120px;
-      height: 120px;
-      margin: 0 auto 2rem;
-      background: linear-gradient(135deg, #06b6d4, #0891b2);
-      border-radius: 20px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      font-size: 3rem;
-      font-weight: bold;
-      color: white;
-      box-shadow: 0 20px 40px rgba(6, 182, 212, 0.3);
-    }
-    h1 {
-      font-size: 3.5rem;
-      font-weight: 800;
-      margin-bottom: 1rem;
-      background: linear-gradient(135deg, #06b6d4, #0891b2);
-      -webkit-background-clip: text;
-      -webkit-text-fill-color: transparent;
-      background-clip: text;
-    }
-    .tagline {
-      font-size: 1.5rem;
-      color: #94a3b8;
-      margin-bottom: 3rem;
-      font-weight: 300;
-    }
-    .features {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-      gap: 2rem;
-      margin-bottom: 3rem;
-    }
-    .feature {
-      background: rgba(255, 255, 255, 0.05);
-      padding: 2rem;
-      border-radius: 15px;
-      border: 1px solid rgba(6, 182, 212, 0.2);
-      backdrop-filter: blur(10px);
-    }
-    .feature-icon {
-      font-size: 2.5rem;
-      margin-bottom: 1rem;
-    }
-    .feature h3 {
-      font-size: 1.25rem;
-      margin-bottom: 0.5rem;
-      color: #06b6d4;
-    }
-    .feature p {
-      color: #cbd5e1;
-      line-height: 1.6;
-    }
-    .cta-button {
-      display: inline-block;
-      background: linear-gradient(135deg, #06b6d4, #0891b2);
-      color: white;
-      padding: 1rem 2rem;
-      border-radius: 10px;
-      text-decoration: none;
-      font-weight: 600;
-      font-size: 1.1rem;
-      transition: transform 0.2s, box-shadow 0.2s;
-      box-shadow: 0 10px 30px rgba(6, 182, 212, 0.3);
-    }
-    .cta-button:hover {
-      transform: translateY(-2px);
-      box-shadow: 0 15px 40px rgba(6, 182, 212, 0.4);
-    }
-    .status {
-      margin-top: 2rem;
-      padding: 1rem;
-      background: rgba(34, 197, 94, 0.1);
-      border: 1px solid rgba(34, 197, 94, 0.3);
-      border-radius: 10px;
-      color: #4ade80;
-    }
-  </style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ZEMA - Zero Effort Mail Automation</title>
+    <meta name="description" content="ZEMA - Zero Effort Mail Automation. Streamline your email workflow with AI-powered automation.">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell', sans-serif;
+            background: linear-gradient(135deg, #0f172a 0%, #1e293b 50%, #334155 100%);
+            color: white;
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            overflow-x: hidden;
+        }
+        
+        .container {
+            text-align: center;
+            max-width: 900px;
+            padding: 2rem;
+            width: 100%;
+        }
+        
+        .logo {
+            width: 140px;
+            height: 140px;
+            margin: 0 auto 2rem;
+            background: linear-gradient(135deg, #06b6d4, #0891b2, #0e7490);
+            border-radius: 24px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 4rem;
+            font-weight: 900;
+            color: white;
+            box-shadow: 0 25px 50px rgba(6, 182, 212, 0.4);
+            animation: glow 2s ease-in-out infinite alternate;
+        }
+        
+        @keyframes glow {
+            from { box-shadow: 0 25px 50px rgba(6, 182, 212, 0.4); }
+            to { box-shadow: 0 35px 70px rgba(6, 182, 212, 0.6); }
+        }
+        
+        h1 {
+            font-size: 4rem;
+            font-weight: 900;
+            margin-bottom: 1rem;
+            background: linear-gradient(135deg, #06b6d4, #0891b2, #0e7490);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            text-shadow: 0 0 30px rgba(6, 182, 212, 0.5);
+        }
+        
+        .tagline {
+            font-size: 1.8rem;
+            color: #94a3b8;
+            margin-bottom: 3rem;
+            font-weight: 300;
+            letter-spacing: 0.5px;
+        }
+        
+        .features {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 2rem;
+            margin-bottom: 4rem;
+        }
+        
+        .feature {
+            background: rgba(255, 255, 255, 0.05);
+            padding: 2.5rem;
+            border-radius: 20px;
+            border: 1px solid rgba(6, 182, 212, 0.2);
+            backdrop-filter: blur(10px);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        
+        .feature:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 20px 40px rgba(6, 182, 212, 0.2);
+        }
+        
+        .feature-icon {
+            font-size: 3rem;
+            margin-bottom: 1.5rem;
+            filter: drop-shadow(0 0 10px rgba(6, 182, 212, 0.3));
+        }
+        
+        .feature h3 {
+            font-size: 1.5rem;
+            margin-bottom: 1rem;
+            color: #06b6d4;
+            font-weight: 600;
+        }
+        
+        .feature p {
+            color: #cbd5e1;
+            line-height: 1.7;
+            font-size: 1.1rem;
+        }
+        
+        .cta-section {
+            margin-bottom: 3rem;
+        }
+        
+        .cta-button {
+            display: inline-block;
+            background: linear-gradient(135deg, #06b6d4, #0891b2);
+            color: white;
+            padding: 1.2rem 2.5rem;
+            border-radius: 12px;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 1.2rem;
+            transition: all 0.3s ease;
+            box-shadow: 0 10px 30px rgba(6, 182, 212, 0.4);
+            border: none;
+            cursor: pointer;
+            margin: 0 0.5rem;
+        }
+        
+        .cta-button:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 15px 40px rgba(6, 182, 212, 0.5);
+        }
+        
+        .cta-button.secondary {
+            background: rgba(255, 255, 255, 0.1);
+            border: 1px solid rgba(6, 182, 212, 0.3);
+        }
+        
+        .status {
+            margin-top: 2rem;
+            padding: 1.5rem;
+            background: rgba(34, 197, 94, 0.1);
+            border: 1px solid rgba(34, 197, 94, 0.3);
+            border-radius: 15px;
+            color: #4ade80;
+            font-size: 1.1rem;
+            font-weight: 500;
+        }
+        
+        .api-demo {
+            margin-top: 2rem;
+            padding: 1.5rem;
+            background: rgba(255, 255, 255, 0.05);
+            border: 1px solid rgba(6, 182, 212, 0.2);
+            border-radius: 15px;
+            text-align: left;
+        }
+        
+        .api-demo h4 {
+            color: #06b6d4;
+            margin-bottom: 1rem;
+        }
+        
+        .api-demo button {
+            background: linear-gradient(135deg, #06b6d4, #0891b2);
+            color: white;
+            border: none;
+            padding: 0.8rem 1.5rem;
+            border-radius: 8px;
+            cursor: pointer;
+            font-weight: 500;
+            margin-right: 1rem;
+            margin-bottom: 1rem;
+        }
+        
+        .api-demo pre {
+            background: rgba(0, 0, 0, 0.3);
+            padding: 1rem;
+            border-radius: 8px;
+            font-family: 'Courier New', monospace;
+            font-size: 0.9rem;
+            overflow-x: auto;
+            margin-top: 1rem;
+        }
+        
+        @media (max-width: 768px) {
+            h1 { font-size: 2.5rem; }
+            .tagline { font-size: 1.3rem; }
+            .logo { width: 100px; height: 100px; font-size: 2.5rem; }
+            .features { grid-template-columns: 1fr; }
+            .cta-button { display: block; margin: 0.5rem 0; }
+        }
+    </style>
 </head>
 <body>
-  <div class="container">
-    <div class="logo">Z</div>
-    <h1>ZEMA</h1>
-    <p class="tagline">Zero Effort Mail Automation</p>
-    
-    <div class="features">
-      <div class="feature">
-        <div class="feature-icon">🤖</div>
-        <h3>AI-Powered</h3>
-        <p>Smart email processing with advanced automation rules and intelligent filtering.</p>
-      </div>
-      <div class="feature">
-        <div class="feature-icon">⚡</div>
-        <h3>Lightning Fast</h3>
-        <p>Process emails instantly with our optimized automation engine.</p>
-      </div>
-      <div class="feature">
-        <div class="feature-icon">🔒</div>
-        <h3>Secure</h3>
-        <p>Enterprise-grade security with encrypted data and secure integrations.</p>
-      </div>
+    <div class="container">
+        <div class="logo">Z</div>
+        <h1>ZEMA</h1>
+        <p class="tagline">Zero Effort Mail Automation</p>
+        
+        <div class="features">
+            <div class="feature">
+                <div class="feature-icon">🤖</div>
+                <h3>AI-Powered Automation</h3>
+                <p>Smart email processing with advanced automation rules, intelligent filtering, and machine learning-based optimization for maximum efficiency.</p>
+            </div>
+            <div class="feature">
+                <div class="feature-icon">⚡</div>
+                <h3>Lightning Fast Processing</h3>
+                <p>Process thousands of emails instantly with our optimized automation engine built for enterprise-scale performance and reliability.</p>
+            </div>
+            <div class="feature">
+                <div class="feature-icon">🔒</div>
+                <h3>Enterprise Security</h3>
+                <p>Bank-grade encryption, SOC 2 compliance, and secure integrations ensure your sensitive email data remains protected at all times.</p>
+            </div>
+        </div>
+        
+        <div class="cta-section">
+            <button class="cta-button" onclick="testAPI()">Test API</button>
+            <a href="mailto:demo@zema.com?subject=ZEMA Demo Request" class="cta-button secondary">Contact Demo</a>
+        </div>
+        
+        <div class="api-demo">
+            <h4>Live API Demo</h4>
+            <button onclick="testHealthCheck()">Health Check</button>
+            <button onclick="testAuthUser()">Auth User</button>
+            <pre id="apiResponse">Click a button above to test the API endpoints...</pre>
+        </div>
+        
+        <div class="status">
+            ✅ ZEMA 2 - Clean Version Successfully Deployed on Railway!
+        </div>
     </div>
-    
-    <a href="mailto:demo@zema.com" class="cta-button">Get Started</a>
-    
-    <div class="status">
-      ✅ ZEMA 2 - Clean Version Successfully Deployed!
-    </div>
-  </div>
+
+    <script>
+        async function testAPI() {
+            try {
+                const response = await fetch('/api/auth/user');
+                const data = await response.json();
+                document.getElementById('apiResponse').textContent = JSON.stringify(data, null, 2);
+            } catch (error) {
+                document.getElementById('apiResponse').textContent = 'Error: ' + error.message;
+            }
+        }
+
+        async function testHealthCheck() {
+            try {
+                const response = await fetch('/health');
+                const data = await response.json();
+                document.getElementById('apiResponse').textContent = JSON.stringify(data, null, 2);
+            } catch (error) {
+                document.getElementById('apiResponse').textContent = 'Error: ' + error.message;
+            }
+        }
+
+        async function testAuthUser() {
+            testAPI();
+        }
+    </script>
 </body>
 </html>
