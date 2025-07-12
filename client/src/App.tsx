@@ -1,8 +1,8 @@
 import { Router, Route, Switch } from 'wouter'
 import { useQuery } from '@tanstack/react-query'
-import Landing from './pages/Landing.tsx'
-import Dashboard from './pages/Dashboard.tsx'
-import SignIn from './pages/SignIn.tsx'
+import Landing from './pages/Landing'
+import Dashboard from './pages/Dashboard'
+import SignIn from './pages/SignIn'
 function App() {
   const { data: user, isLoading } = useQuery({
     queryKey: ['/api/auth/user'],
