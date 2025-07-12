@@ -4,7 +4,6 @@
   "description": "ZEMA - Zero Effort Mail Automation",
   "main": "server.cjs",
   "scripts": {
-    "build": "mkdir -p dist/public && cp index.html dist/public/",
     "start": "node server.cjs"
   },
   "dependencies": {
